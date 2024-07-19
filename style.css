@@ -1,0 +1,177 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
+:root {
+  --clr-darkblue: hsl(233, 47%, 7%);
+  --clr-desatblue: hsl(244, 38%, 16%);
+  --clr-violet: hsl(277, 64%, 61%);
+  --clr-white: hsl(0, 0%, 100%);
+  --clr-copy: hsla(0, 0%, 100%, 0.75);
+  --clr-titlecopy: hsla(0, 0%, 100%, 0.6);
+}
+
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+.overlay {
+  position: relative;
+  height: 250px;
+}
+
+.overlay::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: hsla(282, 79%, 39%, 0.614);
+}
+
+.img {
+  background-image: url("images/image-header-mobile.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: block;
+  max-width: 100%;
+  border-radius: 0.5rem 0.5rem 0 0;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-size: 15px;
+  line-height: 1.6;
+  background-color: var(--clr-darkblue);
+  color: var(--clr-copy);
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.5rem;
+  margin: 0.5rem;
+  background-color: var(--clr-desatblue);
+}
+
+.content {
+  padding: 2rem;
+  text-align: center;
+}
+
+h1 {
+  font-size: 1.75rem;
+  max-width: 15ch;
+  margin: 0 auto 1rem auto;
+  line-height: 1.2;
+}
+
+.content h1 > span {
+  color: var(--clr-violet);
+}
+
+.title-copy {
+  margin: 1rem auto 2rem auto;
+  max-width: 30ch;
+  color: var(--clr-titlecopy);
+}
+
+.stats {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.stat {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.1rem;
+}
+
+.stat h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--clr-white);
+}
+
+.stat p {
+  font-size: 0.75rem;
+  color: var(--clr-copy);
+  letter-spacing: 0.1rem;
+}
+
+@media only screen and (min-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+
+  .card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-radius: 0.5rem;
+    height: unset;
+  }
+
+  .content {
+    text-align: left;
+    display: block;
+    order: 1;
+  }
+
+  .overlay {
+    overflow: hidden;
+    order: 2;
+    border-radius: 0 0.5rem 0.5rem 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .img {
+    background-image: url("images/image-header-desktop.jpg");
+    display: block;
+    border-radius: unset;
+    height: 100%;
+    width: 100%;
+  }
+
+  .content h1 {
+    font-size: 2rem;
+    margin: 0;
+    max-width: 20ch;
+  }
+
+  .title-copy {
+    max-width: 40ch;
+    font-size: 0.875rem;
+    margin: 1rem 0 4rem 0;
+  }
+
+  .stats {
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-bottom: 1rem;
+    gap: 0;
+  }
+
+  .stat {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .stat h2 {
+    font-size: 1.25rem;
+  }
+
+  .stat p {
+    font-size: 0.75rem;
+  }
+}
